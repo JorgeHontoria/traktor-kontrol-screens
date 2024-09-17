@@ -125,3 +125,5 @@ Before:
 
 After:
 ![After: Fixed the Stem](https://user-images.githubusercontent.com/16992805/78146245-48e8d400-7408-11ea-9518-ecbab05333dd.jpg)
+
+.
