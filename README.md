@@ -1,14 +1,10 @@
-# Replacement screens for **Traktor Pro 3.10.x and 3.11.x** and **Kontrol D2/S5/S8 and S4 MK3**
+# Replacement screens for **Traktor Pro 3.10.x and 3.11.x** and **Kontrol D2/S5/S8**
 
 **Contact:**
+  Subscribe and help us to improve this project. Thanks to your subscription you will have access to the latest versions of the MOD with dozens of improvements.
 
+  - Patreon: [@TraktorSimpleScreen](https://www.patreon.com/c/TraktorSimpleScreen)
   - Twitter: [@tipesoft](http://twitter.com/tipesoft)
-
-  - MrPatben8: https://github.com/MrPatben8
-
-  - Twitter: [@kokernutz](http://twitter.com/kokernutz)
-  - MixCloud: [@kokernutz](http://mixcloud.com/kokernutz)
-  - SoundCloud: [@kokernutz](http://soundcloud.com/kokernutz)
 
 **New features:**
   
@@ -124,3 +120,9 @@ Before:
 
 After:
 ![After: Fixed the Stem](https://user-images.githubusercontent.com/16992805/78146245-48e8d400-7408-11ea-9518-ecbab05333dd.jpg)
+
+**Others authors:**
+  - MrPatben8: https://github.com/MrPatben8
+  - Twitter: [@kokernutz](http://twitter.com/kokernutz)
+  - MixCloud: [@kokernutz](http://mixcloud.com/kokernutz)
+  - SoundCloud: [@kokernutz](http://soundcloud.com/kokernutz)
