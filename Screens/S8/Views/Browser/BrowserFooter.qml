@@ -194,7 +194,7 @@ Rectangle {
         anchors.rightMargin:  7
         font.pixelSize: fonts.scale(12)
         font.capitalization: Font.AllUppercase
-        font.family: "Pragmatica"
+        font.family: prefs.fontName
         color: colors.browser.prelisten
         text: utils.convertToTimeString(previewTrackElapsed.value)
       }

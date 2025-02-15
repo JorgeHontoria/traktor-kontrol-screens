@@ -1,4 +1,4 @@
-import QtQuick
+import QtQuick 2.5
 import QtQuick.Layouts 1.1
 
 import '../Widgets' as Widgets
@@ -9,7 +9,6 @@ import '../Widgets' as Widgets
 
 Item {
   id: display
-
   Dimensions {id: dimensions}
 
   // MODEL PROPERTIES //
@@ -72,7 +71,7 @@ Item {
         Text {
           text: deckInfo.bpmString
           font.pixelSize: 24
-          font.family: "Roboto"
+          font.family: prefs.fontName
           font.weight: Font.Normal
           color: "white"
           anchors.fill: parent
@@ -122,7 +121,7 @@ Item {
             id: keyText
             text: keyDisplay.keyLabelStr
             font.pixelSize: 24
-            font.family: "Roboto"
+            font.family: prefs.fontName
             color: keyDisplay.textColor
             anchors.fill: parent
             horizontalAlignment: Text.AlignHCenter
@@ -154,7 +153,7 @@ Item {
         Text {
           text: deckInfo.remainingTimeString
           font.pixelSize: 45
-          font.family: "Roboto"
+          font.family: prefs.fontName
           color: trackEndBlinkTimer.blink ? "black": "white"
           anchors.fill: parent
           horizontalAlignment: Text.AlignHCenter
@@ -194,7 +193,7 @@ Item {
         Text {
           text: deckInfo.loopSizeString
           font.pixelSize: 45
-          font.family: "Roboto"
+          font.family: prefs.fontName
           color: deckInfo.loopActive ? "black" : ( deckInfo.shift ? colors.colorDeckGrey : colors.defaultTextColor )
           anchors.fill: parent
           horizontalAlignment: Text.AlignHCenter

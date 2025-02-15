@@ -66,7 +66,7 @@ CenterOverlay {
     anchors.horizontalCenter: parent.horizontalCenter
     anchors.topMargin:        47
     font.pixelSize:           fonts.superLargeValueFontSize
-    font.family   :           "Pragmatica"
+    font.family   :           "Consolas"
     color:                    colors.colorWhite    
     text:                     dispBpm.toFixed(2).toString()
   }

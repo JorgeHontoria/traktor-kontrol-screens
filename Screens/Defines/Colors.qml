@@ -91,6 +91,8 @@ QtObject {
   property variant colorGrey16:                 rgba (16, 16, 16, 255)
   property variant colorGrey08:                 rgba (08, 08, 08, 255)
 
+
+
   property variant colorOrange:                 rgba(208, 104, 0, 255) // FX Selection; FX Faders etc
   property variant colorOrangeDimmed:           rgba(96, 48, 0, 255)  
 
@@ -145,7 +147,7 @@ QtObject {
 
   property variant colorCenterOverlayHeadline:  colorGrey88
 
-  // blue
+// blue
   property variant colorDeckBlueBright:         rgba(0, 136, 184, 255) 
   property variant colorDeckBlueDark:           rgba(0, 64, 88, 255) 
   property variant colorDeckBlueBright20:       rgba(0, 174, 239, 51)
@@ -427,9 +429,10 @@ QtObject {
     color11MusicalKey     //23  -13 bm
   ]
 
-
   //--------------------------------------------------------------------------------------------------------------------
+
   //  Waveform coloring
+
   //--------------------------------------------------------------------------------------------------------------------
 
   property variant waveformColorsMap: [

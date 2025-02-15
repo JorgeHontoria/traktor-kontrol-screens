@@ -3,7 +3,6 @@ import CSI 1.0
 Module {
 	// input
 	id: module
-
 	property string path: ""
 	property int value: 0
 

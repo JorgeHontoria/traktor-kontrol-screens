@@ -1,4 +1,4 @@
-import QtQuick
+import QtQuick 2.5
 
 Item {
     id: widget
@@ -25,7 +25,7 @@ Item {
         opacity: 0.5
         text: widget.title
         font.pixelSize: 10
-        font.family: "Roboto"
+        font.family: prefs.fontName
         font.weight: Font.Normal
         color: widget.color
         horizontalAlignment: widget.alignment
@@ -45,7 +45,7 @@ Item {
         id: content
         text: widget.text
         font.pixelSize: widget.fontSize
-        font.family: "Roboto"
+        font.family: prefs.fontName
         font.weight: Font.Light
         color: widget.color
         verticalAlignment: Text.AlignBottom

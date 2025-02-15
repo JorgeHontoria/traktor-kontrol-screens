@@ -36,7 +36,7 @@ Item {
       text: loopText[loopSizePos.value]
       color: colors.colorGreen
       font.pixelSize: fonts.extraLargeValueFontSize
-      font.family: "Pragmatica"
+      font.family: prefs.fontName
       anchors.fill: loopSizeBackground
       anchors.rightMargin: 2
       anchors.topMargin: 1

@@ -1,4 +1,4 @@
-import QtQuick
+import QtQuick 2.5
 
 //here we assume that `colors` and `dimensions` already exists in the object hierarchy
 Item {
@@ -21,7 +21,7 @@ Item {
       anchors.fill : parent
       anchors.leftMargin:   dimensions.titleTextMargin
       anchors.rightMargin:  dimensions.titleTextMargin
-      font.family: "Roboto"
+      font.family: prefs.fontName
       font.weight: Font.Normal
 
       font.pixelSize: 22

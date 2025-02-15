@@ -116,7 +116,7 @@
     Text {
       id: fxInfoValueLarge
       text:               finalValue
-      font.family:        "Pragmatica" // is monospaced
+      font.family:        "Consolas" // is monospaced
       color:              colors.colorWhite
       visible:            label.length > 0
       anchors.top:        parent.top

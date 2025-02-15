@@ -55,7 +55,7 @@ Item {
     anchors.fill: view
 
     property int deckId: view.deckId
-    readonly property int lineWidthAdjustment: 0
+    readonly property int lineWidthAdjustment: -2
 
     Rectangle {                         // loop coloring
       color:  colors.colorGreenLoopOverlay       // sets the loop bg color

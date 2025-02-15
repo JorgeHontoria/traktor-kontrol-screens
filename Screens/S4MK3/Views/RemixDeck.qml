@@ -1,6 +1,5 @@
-import QtQuick
+import QtQuick 2.5
 import QtQuick.Layouts 1.1
-
 import '../Widgets' as Widgets
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -10,7 +9,6 @@ import '../Widgets' as Widgets
 
 Item {
   id: display
-  
   Colors {id: colors}
   Dimensions {id: dimensions}
   
@@ -83,7 +81,7 @@ Item {
         Text {
           text: deckInfo.bpmString
           font.pixelSize: 24
-          font.family: "Roboto"
+          font.family: prefs.fontName
           font.weight: Font.Normal
           color: "white"
           anchors.fill: parent
@@ -108,7 +106,7 @@ Item {
           id: quantText
           text: deckInfo.rmxQuantizeIndex
           font.pixelSize: 24
-          font.family: "Roboto"
+          font.family: prefs.fontName
           font.weight: Font.Normal
           color: colors.musicalKeyColors[(utils.returnKeyIndex(deckInfo.keyString))]
           anchors.verticalCenter: parent.verticalCenter
@@ -123,7 +121,7 @@ Item {
           visible: deckInfo.rmxQuantizeOn
           text: "\u25CF"
           font.pixelSize: 24
-          font.family: "Roboto"
+          font.family: prefs.fontName
           font.weight: Font.Normal
           color: colors.colorEnabledCyan
           anchors.left: quantText.right
@@ -152,7 +150,7 @@ Item {
         Text {
           text: deckInfo.beatPositionString
           font.pixelSize: 45
-          font.family: "Roboto"
+          font.family: prefs.fontName
           color: "white"
           anchors.fill: parent
           anchors.leftMargin: display.textMargin
@@ -178,7 +176,7 @@ Item {
         Text {
           text: deckInfo.loopSizeString
           font.pixelSize: 45
-          font.family: "Roboto"
+          font.family: prefs.fontName
           color: deckInfo.loopActive ? "black" : colors.defaultTextColor
           anchors.fill: parent
           anchors.leftMargin:   display.textMargin

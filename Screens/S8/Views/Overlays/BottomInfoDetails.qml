@@ -124,7 +124,7 @@ Rectangle {
         anchors.verticalCenter: parent.verticalCenter
         text: isEnabled ? ( toPercent ? Math.floor(parameter.description * 100 + 0.1) + "%" : parameter.description ) : ""
         color: colors.colorWhite
-        font.family: "Pragmatica" // is monospaced
+        font.family: prefs.fontName // is monospaced
         font.pixelSize: fonts.largeValueFontSize
        
         property bool toPercent: false

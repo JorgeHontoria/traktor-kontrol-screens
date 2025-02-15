@@ -1,4 +1,4 @@
-import QtQuick
+import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import '../Views'
 
@@ -9,7 +9,6 @@ import '../Views'
 
 Item {
   id: display
-  
   Colors {id: colors}
   Dimensions {id: dimensions}
   
@@ -73,7 +72,7 @@ Item {
         Text {
           text: "Volume"
           font.pixelSize: 24
-          font.family: "Roboto"
+          font.family: prefs.fontName
           font.weight: Font.Normal
           color: !display.slot.muted ? "white" : "grey"
           anchors.fill: parent
@@ -94,7 +93,7 @@ Item {
         Text {
           text: "Filter"
           font.pixelSize: 24
-          font.family: "Roboto"
+          font.family: prefs.fontName
           font.weight: Font.Normal
           color: display.slot.filterOn ? "white" : "grey"
           anchors.verticalCenter: parent.verticalCenter

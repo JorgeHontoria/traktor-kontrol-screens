@@ -1,4 +1,4 @@
-import QtQuick
+import QtQuick 2.5
 import Qt5Compat.GraphicalEffects
 
 Item {

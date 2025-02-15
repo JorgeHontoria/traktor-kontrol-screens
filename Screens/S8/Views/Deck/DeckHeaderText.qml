@@ -1,6 +1,8 @@
 import CSI 1.0
 import QtQuick
 
+import '../../../../Screens/Defines'
+
 //--------------------------------------------------------------------------------------------------------------------
 //  DECK HEADER TEXT
 //--------------------------------------------------------------------------------------------------------------------
@@ -22,8 +24,6 @@ Text {
   readonly property int     isInSync:  propIsInSync.value
   readonly property int     isMaster:  (propSyncMasterDeck.value == deckId) ? 1 : 0
 
-  readonly property string  fontForNumber: "Pragmatica"
-  readonly property string  fontForString: "Pragmatica MediumTT"
   readonly property variant keyIndex:      {"1d": 0, "8d": 1, "3d": 2, "10d": 3, "5d": 4, "12d": 5,
                                             "7d": 6, "2d": 7, "9d": 8, "4d": 9, "11d": 10, "6d": 11,
                                             "10m": 12, "5m": 13, "12m": 14, "7m": 15, "2m": 16, "9m": 17,
@@ -39,7 +39,7 @@ Text {
   y:        0
   width:       (maxTextWidth == 0 || text.paintedWidth > maxTextWidth) ? text.paintedWidth : maxTextWidth
   text:        "" 
-  font.family: fontForString
+  font.family: prefs.fontForString
 
 
   //--------------------------------------------------------------------------------------------------------------------
@@ -137,153 +137,153 @@ Text {
     },
     State { 
       name: "title"; // Top1 and Bottom1 ONLY
-      PropertyChanges { target: header_text; font.family: fontForString;
+      PropertyChanges { target: header_text; font.family: prefs.fontForString;
                         text:   (!isLoaded)?"":propTitle.value; }
     },
     State { 
       name: "artist";   // Top1 and Bottom1 ONLY
-      PropertyChanges { target: header_text; font.family: fontForString;
+      PropertyChanges { target: header_text; font.family: prefs.fontForString;
                         text:   (!isLoaded)?"":propArtist.value; }
     },
     State { 
       name: "release"; // Top1 and Bottom1 ONLY
-      PropertyChanges { target: header_text; font.family: fontForString;  
+      PropertyChanges { target: header_text; font.family: prefs.fontForString;  
                         text:   (!isLoaded)?"":propAlbum.value; }
     },
     State { 
       name: "genre";   // Top1 and Bottom1 ONLY
-      PropertyChanges { target: header_text; font.family: fontForString;  
+      PropertyChanges { target: header_text; font.family: prefs.fontForString;  
                         text:   (!isLoaded)?"":propGenre.value; }
     },
     State { 
       name: "comment"; // Top1 and Bottom1 ONLY
-      PropertyChanges { target: header_text; font.family: fontForString;  
+      PropertyChanges { target: header_text; font.family: prefs.fontForString;  
                         text:   (!isLoaded)?"":propComment.value; }
     },
     State { 
       name: "comment2";// Top1 and Bottom1 ONLY
-      PropertyChanges { target: header_text; font.family: fontForString;  
+      PropertyChanges { target: header_text; font.family: prefs.fontForString;  
                         text:   (!isLoaded)?"":propComment2.value; }
     },
     State { 
       name: "label";// Top1 and Bottom1 ONLY
-      PropertyChanges { target: header_text; font.family: fontForString;  
+      PropertyChanges { target: header_text; font.family: prefs.fontForString;  
                         text:   (!isLoaded)?"":propLabel.value; }
     },
     State { 
       name: "mix";     // Top1 and Bottom1 ONLY
-      PropertyChanges { target: header_text; font.family: fontForString;  
+      PropertyChanges { target: header_text; font.family: prefs.fontForString;  
                         text:   (!isLoaded)?"":propMix.value; }
     },
     State { 
       name: "remixer"; // Top1 and Bottom1 ONLY
-      PropertyChanges { target: header_text; font.family: fontForString; 
+      PropertyChanges { target: header_text; font.family: prefs.fontForString; 
                         text:   (!isLoaded)?"":propRemixer.value; }
     },
     State { 
       name: "catNo"; 
-      PropertyChanges { target: header_text; font.family: fontForString;  
+      PropertyChanges { target: header_text; font.family: prefs.fontForString;  
                         text:   (!isLoaded)?"":propCatNo.value }
     },
   //--------------------------------------------------------------------------------------------------------------------
     State { 
       name: "trackLength"; 
-      PropertyChanges { target: header_text; font.family: fontForNumber;  
+      PropertyChanges { target: header_text; font.family: prefs.fontForNumber;  
                         text:   (!isLoaded)?"":utils.convertToTimeString(propTrackLength.value); }
     },
     State { 
       name: "elapsedTime"; 
-      PropertyChanges { target: header_text; font.family: fontForNumber; 
+      PropertyChanges { target: header_text; font.family: prefs.fontForNumber; 
                         text:   (!isLoaded)?"":utils.convertToTimeString(propElapsedTime.value); }
     },
     State { 
       name: "remainingTime"; 
-      PropertyChanges { target: header_text; font.family: fontForNumber; 
+      PropertyChanges { target: header_text; font.family: prefs.fontForNumber; 
                         text:   (!isLoaded)?"":utils.computeRemainingTimeString(propTrackLength.value, propElapsedTime.value); }
     },
   //--------------------------------------------------------------------------------------------------------------------
     State { 
       name: "key"; 
-      PropertyChanges { target: header_text; font.family: fontForNumber;
+      PropertyChanges { target: header_text; font.family: prefs.fontForNumber;
                         color:  getTrackKeyColor(propKeyDisplay.value);
                         text:   (!isLoaded)?"":"♪"+getTrackKeyText(propKeyDisplay.value); }
     },
     State { 
       name: "keyText"; 
-      PropertyChanges { target: header_text; font.family: fontForNumber; 
+      PropertyChanges { target: header_text; font.family: prefs.fontForNumber; 
                         text:   (!isLoaded)?"":propLegacyKey.value.toString(); }
     },
     State { 
       name: "pitchRange"; 
-      PropertyChanges { target: header_text; font.family: fontForNumber; 
+      PropertyChanges { target: header_text; font.family: prefs.fontForNumber; 
                         text:   (!isLoaded)?"":toInt_round(propPitchRange.value*100).toString() + "%"; }
     },
     State { 
       name: "bpm"; 
-      PropertyChanges { target: header_text; font.family: fontForNumber; 
+      PropertyChanges { target: header_text; font.family: prefs.fontForNumber; 
                         text:   (!isLoaded)?"":propMixerBpm.value.toFixed(2).toString(); }
     },
     State { 
       name: "bpmStable"; 
-      PropertyChanges { target: header_text; font.family: fontForNumber;
+      PropertyChanges { target: header_text; font.family: prefs.fontForNumber;
                         text:   (!isLoaded)?"": propMixerStableBpm.value.toFixed(2).toString(); }
     },
     State { 
       name: "bpmTrack";
-      PropertyChanges { target: header_text; font.family: fontForNumber; 
+      PropertyChanges { target: header_text; font.family: prefs.fontForNumber; 
                         text:   (!isLoaded)?"":propMixerStableBpm.value.toFixed(2).toString();  }
     },
     State { 
       name: "tempo"; 
-      PropertyChanges { target: header_text; font.family: fontForNumber; 
+      PropertyChanges { target: header_text; font.family: prefs.fontForNumber; 
                         text:   (!isLoaded)?"":((propTempo.value-1 <= 0)?"":"+") + ((propTempo.value-1)*100).toFixed(1).toString() + "%"; }
     },
     State { 
       name: "tempoStable"; 
-      PropertyChanges { target: header_text; font.family: fontForNumber;
+      PropertyChanges { target: header_text; font.family: prefs.fontForNumber;
                         text:   getStableTempoString(); }
     },
     State { 
       name: "gain";
-      PropertyChanges { target: header_text; font.family: fontForNumber; 
+      PropertyChanges { target: header_text; font.family: prefs.fontForNumber; 
                         text:   (!isLoaded)?"":convertToDb(propMixerTotalGain.value).toFixed(1).toString() + "dB"; }
     },
   //--------------------------------------------------------------------------------------------------------------------
     State { 
       name: "beats"; 
-      PropertyChanges { target: header_text; font.family: fontForNumber;
+      PropertyChanges { target: header_text; font.family: prefs.fontForNumber;
                         text:   (!isLoaded)?"":computeBeatCounterStringFromPosition(((propElapsedTime.value*1000-propGridOffset.value)*propMixerBpm.value)/60000.0); }
     },
     State { 
       name: "beatsToCue";
-      PropertyChanges { target: header_text; font.family: fontForNumber; 
+      PropertyChanges { target: header_text; font.family: prefs.fontForNumber; 
                         color:  computeBeatsToCueColor();
                         text:   (!isLoaded)?"":computeBeatsToCueString(); }
     },
     State { 
       name: "bitrate"; 
-      PropertyChanges { target: header_text;  font.family: fontForNumber; 
+      PropertyChanges { target: header_text;  font.family: prefs.fontForNumber; 
                         text:   (!isLoaded)?"":toInt(propBitrate.value / 1000).toString(); }
     },
     
     State { 
       name: "sync";
-      PropertyChanges { target: header_text; font.family: fontForNumber; 
+      PropertyChanges { target: header_text; font.family: prefs.fontForNumber; 
                         text:  getSyncStatusString(); }
     },
     State { 
       name: "remixBeats";
-      PropertyChanges { target: header_text; font.family: fontForNumber; 
+      PropertyChanges { target: header_text; font.family: prefs.fontForNumber; 
                         text:  (!isLoaded)?"":computeBeatCounterStringFromPosition(propRemixBeatPos.value); }
     },
     State { 
       name: "remixQuantize";
-      PropertyChanges { target: header_text; font.family: fontForNumber; 
+      PropertyChanges { target: header_text; font.family: prefs.fontForNumber; 
                         text:  (!isLoaded) ? "" : ((propRemixIsQuantize.value)? "Q " + propRemixQuantize.description : "Off"); }
     },
     State { 
       name: "keyDisplay"; 
-      PropertyChanges { target: header_text; font.family: fontForNumber;
+      PropertyChanges { target: header_text; font.family: prefs.fontForNumber;
                         text: (!isLoaded)?"":(prefs.camelotKey ? utils.convertToCamelot(keyDisplay.value) : keyDisplay.value); }
     }
   ]
@@ -415,4 +415,6 @@ Text {
       }
     );
   }
+
+  Prefs { id: prefs }
 }

@@ -70,6 +70,7 @@ Item {
         id: textLengthDummy
         visible: false
         font.pixelSize: browserFontSize
+        font.family: prefs.fontName
         text: (model.dataType == BrowserDataType.Track) ? model.trackName  : ( (model.dataType == BrowserDataType.Folder) ? model.nodeName : "")
       }
 
@@ -82,6 +83,7 @@ Item {
         elide: Text.ElideRight
         text: textLengthDummy.text
         font.pixelSize: browserFontSize
+        font.family: prefs.fontName
         color: getListItemTextColor()
         verticalAlignment: Text.AlignVCenter
       }
@@ -107,6 +109,7 @@ Item {
       clip: true
       text: (model.dataType == BrowserDataType.Folder) ? model.nodeName : ""
       font.pixelSize: browserFontSize
+      font.family: prefs.fontName
       elide: Text.ElideRight
       visible: (model.dataType != BrowserDataType.Track)
       width: 190
@@ -131,6 +134,7 @@ Item {
       //text: Math.abs(masterClockBpm.value - model.bpm).toFixed(0)
       text: (model.dataType == BrowserDataType.Track) ? model.artistName: ""
       font.pixelSize: browserFontSize
+      font.family: prefs.fontName
       elide: Text.ElideRight
       verticalAlignment: Text.AlignVCenter
     }  
@@ -149,7 +153,7 @@ Item {
       clip: true
       text: (model.dataType == BrowserDataType.Track) ? model.bpm.toFixed(0) : ""
       font.pixelSize: browserFontSize
-      font.family: "Pragmatica"
+      font.family: prefs.fontName
      }  
 
     Item {
@@ -200,7 +204,7 @@ Item {
       clip: true
       text: (model.dataType == BrowserDataType.Track) ? (((model.key == "none") || (model.key == "None")) ? "-" : (prefs.camelotKey ? keyText[model.keyIndex] : model.key)) : ""
       font.pixelSize: browserFontSize
-      font.family: "Pragmatica"
+      font.family: prefs.fontName
     }
 
     Item {

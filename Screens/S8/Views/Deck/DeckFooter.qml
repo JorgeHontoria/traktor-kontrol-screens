@@ -2,6 +2,8 @@ import CSI 1.0
 import QtQuick
 import Qt5Compat.GraphicalEffects
 
+import '../../../../Screens/Defines'
+
 //--------------------------------------------------------------------------------------------------------------------
 //  DECK FOOTER
 //--------------------------------------------------------------------------------------------------------------------
@@ -101,7 +103,7 @@ Item {
       anchors.left: parent.left
       color: footerPropertyLoopActive.value ? colors.colorGreen : "white"
       font.pixelSize: fonts.scale(9)
-      font.family: "Pragmatica MediumTT"
+      font.family: prefs.fontMediumName
       text: "↻"
     }
     Text {
@@ -109,7 +111,7 @@ Item {
       anchors.right: parent.right
       color: footerPropertyLoopActive.value ? colors.colorGreen : "white"
       font.pixelSize: fonts.scale(9)
-      font.family: "Pragmatica MediumTT"
+      font.family: prefs.fontMediumName
       text: "LOOP"
     }
     Rectangle {
@@ -127,7 +129,7 @@ Item {
         anchors.topMargin: 1
         color: footerPropertyIsLooping.value ? "black" : (footerPropertyLoopActive.value ? colors.colorGreen : "gray")
         font.pixelSize: fonts.scale(13)
-        font.family: "Pragmatica MediumTT"
+        font.family: prefs.fontMediumName
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         text: loopText[loopSizePos]
@@ -151,7 +153,7 @@ Item {
       anchors.leftMargin: 1
       color: "white"
       font.pixelSize: fonts.scale(9)
-      font.family: "Pragmatica MediumTT"
+      font.family: prefs.fontMediumName
       text: "REMAIN"
     }
     // Milliseconds Value
@@ -162,7 +164,7 @@ Item {
       anchors.right: parent.right
       color: "white"
       font.pixelSize: fonts.middleFontSize
-      font.family: "Pragmatica"
+      font.family: prefs.fontName
 
       text: {
         var seconds = propTrackLength.value - propElapsedTime.value;
@@ -184,7 +186,7 @@ Item {
       anchors.right: time_anchor.left
       color: "white"
       font.pixelSize: fonts.largeValueFontSize
-      font.family: "Pragmatica"
+      font.family: prefs.fontName
 
       text: {
         var seconds = propTrackLength.value - propElapsedTime.value;
@@ -210,7 +212,7 @@ Item {
       anchors.rightMargin: 1
       color: "red"
       font.pixelSize: fonts.scale(9)
-      font.family: "Pragmatica MediumTT"
+      font.family: prefs.fontMediumName
       text: "QUANTIZE"
       visible: propSnap.value
     }
@@ -231,7 +233,7 @@ Item {
       anchors.left: parent.left
       color: "white"
       font.pixelSize: fonts.scale(9)
-      font.family: "Pragmatica MediumTT"
+      font.family: prefs.fontMediumName
       text: "TEMPO"
     }
     // Percent Sign
@@ -242,7 +244,7 @@ Item {
       anchors.right: parent.right
       color: "white"
       font.pixelSize: fonts.smallFontSize
-      font.family: "Pragmatica"
+      font.family: prefs.fontName
       text: "%"
     }
     // Value
@@ -252,7 +254,7 @@ Item {
       anchors.right: tempo_anchor.left
       color: "white"
       font.pixelSize: fonts.largeValueFontSize
-      font.family: "Pragmatica"
+      font.family: prefs.fontName
 
       text: {
         var tempo = propTempo.value - 1;
@@ -267,7 +269,7 @@ Item {
       anchors.rightMargin: 1
       color: "red"
       font.pixelSize: fonts.scale(9)
-      font.family: "Pragmatica MediumTT"
+      font.family: prefs.fontMediumName
       text: "LOCK"
       visible: propKeyEnabled.value
     }
@@ -288,7 +290,7 @@ Item {
       anchors.left: parent.left
       color: "white"
       font.pixelSize: fonts.scale(9)
-      font.family: "Pragmatica MediumTT"
+      font.family: prefs.fontMediumName
       text: "BPM"
     }
     // Master BPM
@@ -297,7 +299,7 @@ Item {
       anchors.right: parent.right
       color: "orange"
       font.pixelSize: fonts.scale(9)
-      font.family: "Pragmatica MediumTT"
+      font.family: prefs.fontMediumName
       text: "MASTER"
       visible: isMaster
     }
@@ -309,7 +311,7 @@ Item {
       anchors.right: parent.right
       color: isMaster ? "orange" : "white"
       font.pixelSize: fonts.middleFontSize
-      font.family: "Pragmatica"
+      font.family: prefs.fontName
 
       text: {
         var bpm = propMixerBpm.value * propTempo.value;
@@ -329,7 +331,7 @@ Item {
       anchors.right: bpm_anchor.left
       color: isMaster ? "orange" : "white"
       font.pixelSize: fonts.largeValueFontSize
-      font.family: "Pragmatica"
+      font.family: prefs.fontName
 
       text: {
         return Math.floor((propMixerBpm.value * propTempo.value).toFixed(2)).toString();
@@ -351,7 +353,7 @@ Item {
         anchors.centerIn: parent
         color: "black"
         font.pixelSize: fonts.scale(9)
-        font.family: "Pragmatica MediumTT"
+        font.family: prefs.fontMediumName
         text: "SYNC"
       }
     }
@@ -453,4 +455,6 @@ Item {
     anchors.top: cover_small.top
     anchors.left: cover_small.left
   }
+  
+  Prefs { id: prefs }
 }

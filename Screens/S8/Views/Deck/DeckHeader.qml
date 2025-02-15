@@ -4,6 +4,8 @@ import Qt5Compat.GraphicalEffects
 
 import '../Widgets' as Widgets
 
+import '../../../../Screens/Defines'
+
 //--------------------------------------------------------------------------------------------------------------------
 //  DECK HEADER
 //--------------------------------------------------------------------------------------------------------------------
@@ -204,7 +206,15 @@ Item {
     opacity:        0.6
 
     visible:       (deckType == DeckType.Stem) || showStepSequencer
-    Text { x: showStepSequencer ? 5 : 3; y:1; text: showStepSequencer ? "STEP" : "STEM"; color: textColors[deck_Id]; font.pixelSize:fonts.miniFontSize }
+
+    Text { 
+      x: showStepSequencer ? 5 : 3
+      y: 1 
+      text: showStepSequencer ? "STEP" : "STEM"
+      color: textColors[deck_Id]
+      font.pixelSize:fonts.miniFontSize
+      font.family: prefs.fontName
+    }
 
     Behavior on opacity { NumberAnimation { duration: speed } }
   }
@@ -224,6 +234,7 @@ Item {
     fontSizeMode:       Text.HorizontalFit
     minimumPixelSize:   fonts.smallFontSize
     font.pixelSize:     fonts.largeFontSize // set in state
+    font.family: prefs.fontName
     anchors.top:        parent.top
     anchors.left:       cover_small.right
     anchors.right:      top_middle_text.left
@@ -246,6 +257,7 @@ Item {
     fontSizeMode:       Text.HorizontalFit
     minimumPixelSize:   fonts.smallFontSize
     font.pixelSize:     fonts.largeFontSize
+    font.family:        prefs.fontName
     anchors.top:          parent.top
     anchors.right:        top_right_text.left
     horizontalAlignment: Text.AlignRight
@@ -268,6 +280,7 @@ Item {
     fontSizeMode:       Text.HorizontalFit
     minimumPixelSize:   fonts.smallFontSize
     font.pixelSize:     fonts.largeFontSize
+    font.family: prefs.fontName
     anchors.top:          parent.top
     anchors.right:        parent.right
     anchors.rightMargin:  rightFieldMargin
@@ -291,6 +304,7 @@ Item {
     fontSizeMode:       Text.HorizontalFit
     minimumPixelSize:   fonts.miniFontSize
     font.pixelSize:     fonts.middleFontSize
+    font.family:        prefs.fontName
     anchors.top:        top_left_text.bottom
     anchors.left:       cover_small.right
     anchors.right:      top_middle_text.left
@@ -315,6 +329,7 @@ Item {
     fontSizeMode:       Text.HorizontalFit
     minimumPixelSize:   fonts.miniFontSize
     font.pixelSize:     fonts.middleFontSize
+    font.family:        prefs.fontName
     anchors.top:          top_middle_text.bottom
     anchors.right:        middle_right_text.left
     horizontalAlignment: Text.AlignRight
@@ -340,6 +355,7 @@ Item {
     fontSizeMode:       Text.HorizontalFit
     minimumPixelSize:   fonts.miniFontSize
     font.pixelSize:     fonts.middleFontSize
+    font.family: prefs.fontName
     horizontalAlignment: Text.AlignRight
     verticalAlignment: Text.AlignVCenter
     onTextChanged: {updateHeader()}
@@ -362,6 +378,7 @@ Item {
     fontSizeMode:       Text.HorizontalFit
     minimumPixelSize:   fonts.miniFontSize
     font.pixelSize:     fonts.middleFontSize
+    font.family:        prefs.fontName
     anchors.top:        middle_left_text.bottom
     anchors.left:       cover_small.right
     anchors.right:      original_tempo.left
@@ -388,6 +405,7 @@ Item {
     fontSizeMode:       Text.HorizontalFit
     minimumPixelSize:   fonts.miniFontSize
     font.pixelSize:     fonts.middleFontSize
+    font.family:        prefs.fontName
     horizontalAlignment: Text.AlignRight
     verticalAlignment: Text.AlignVCenter
     Behavior on opacity             { NumberAnimation { duration: speed } }
@@ -412,6 +430,7 @@ Item {
     fontSizeMode:       Text.HorizontalFit
     minimumPixelSize:   fonts.miniFontSize
     font.pixelSize:     fonts.middleFontSize
+    font.family:        prefs.fontName
     horizontalAlignment: Text.AlignRight
     verticalAlignment: Text.AlignVCenter
     Behavior on opacity             { NumberAnimation { duration: speed } }
@@ -440,7 +459,7 @@ Item {
       text: loopText[loopSizePos]
       color: headerPropertyLoopActive.value ? colors.colorGreen : textColors[deck_Id]
       font.pixelSize: fonts.scale((loopSizePos < 5) ? fonts.miniFontSize : fonts.smallFontSize);
-      font.family: "Pragmatica MediumTT"
+      font.family: prefs.fontMediumName
       anchors.fill: loop_size
       anchors.topMargin: 2
       horizontalAlignment: Text.AlignHCenter
@@ -478,14 +497,14 @@ Item {
       visible: prefs.displayDeckIndicators
       height: parent.height
       anchors.top: parent.top
-      color: deckRunning.value && isInSync ? colors.colorDeckBlueBright : colors.colorGrey40
+      color: deckRunning.value && isInSync ? colors.colorGreen : colors.colorGrey40
 
       Text {
         anchors.fill: parent
         text: "SYNC"
         color: isInSync ? (deckRunning.value ? colors.colorGrey24 : colors.colorDeckBlueBright) : colors.colorGrey128
-        font.family: "Pragmatica MediumTT"
         font.pixelSize: fonts.smallFontSize + 1
+        font.family: prefs.fontMediumName
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
       }
@@ -505,8 +524,8 @@ Item {
         anchors.fill: parent
         text: "MASTER"
         color: isMaster ? (deckRunning.value ? colors.colorGrey24 : colors.colorDeckBlueBright) : colors.colorGrey128
-        font.family: "Pragmatica MediumTT"
         font.pixelSize: fonts.smallFontSize + 1
+        font.family: prefs.fontMediumName
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
       }
@@ -526,8 +545,8 @@ Item {
         anchors.fill: parent
         text: prefs.mixerFXNames[mixerFX.value]
         color: mixerFXOn.value ? colors.colorGrey40 : colors.mixerFXColors[mixerFX.value]
-        font.family: "Pragmatica MediumTT"
         font.pixelSize: fonts.smallFontSize + 1
+        font.family: prefs.fontMediumName
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
       }
@@ -548,8 +567,8 @@ Item {
         text: "LOOP "  + loopText[loopSizePos]
         //color: colors.colorGrey200 // isMaster ? (deckRunning.value ? colors.colorGrey24 : colors.colorDeckBlueBright) : colors.colorGrey200
         color: headerPropertyLoopActive.value ? colors.colorGrey40 : colors.colorGreen50
-        font.family: "Pragmatica" //MediumTT"
         font.pixelSize: fonts.smallFontSize + 1
+        font.family: prefs.fontMediumName
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
       }
@@ -776,6 +795,7 @@ Item {
       id: top_warning_text
       color:              isError ? colors.colorRed : colors.colorOrange
       font.pixelSize:     fonts.largeFontSize // set in state
+      font.family: prefs.fontName
 
       text: deckHeaderWarningShortMessage.value
 
@@ -791,6 +811,7 @@ Item {
       color:      isError ? colors.colorRed : colors.colorOrangeDimmed
       elide:      Text.ElideRight
       font.pixelSize:     fonts.middleFontSize
+      font.family: prefs.fontName
 
       text: deckHeaderWarningMessage.value
 
@@ -876,4 +897,6 @@ Item {
       PropertyChanges { target: middle_center_text;   opacity: 1; }
     }
   ]
+
+  Prefs { id: prefs }
 }

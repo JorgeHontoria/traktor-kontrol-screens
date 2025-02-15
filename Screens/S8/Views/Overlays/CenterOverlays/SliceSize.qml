@@ -34,7 +34,7 @@ CenterOverlay {
     anchors.horizontalCenter: parent.horizontalCenter
     anchors.topMargin:        53
     font.pixelSize:           fonts.extraLargeValueFontSize
-    font.family:              "Pragmatica"
+    font.family:              "Consolas"
     color:                    colors.colorWhite  
     text:  sliceSizeIndex.value + "  " + beatString
   }

@@ -1,4 +1,4 @@
-import QtQuick
+import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import "../Views"
 import "../ViewModels"
@@ -104,7 +104,7 @@ Item {
             Text { 
               text: getName(modelData)
               font.pixelSize: 24
-              font.family: "Roboto"
+              font.family: prefs.fontName
               font.weight: Font.Normal
               color: "white"
               anchors.verticalCenter: parent.verticalCenter

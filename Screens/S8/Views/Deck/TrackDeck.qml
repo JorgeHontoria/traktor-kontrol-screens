@@ -5,6 +5,8 @@ import Qt5Compat.GraphicalEffects
 import '../../../../Defines'
 import '../Waveform' as WF
 
+import '../../../../Screens/Defines'
+
 Item {
   id: trackDeck
   property int    deckId:          0
@@ -201,7 +203,7 @@ Item {
           elide: Text.ElideRight
           text: (index + 1) + " " + (exists.value > 0 && name.value != "n.n." && name.value != "AutoGrid" ? name.value : "")
           color: exists.value > 0 ? colors.colorGrey24 : colors.colorGrey128
-          font.family: "Pragmatica MediumTT"        
+          font.family: prefs.fontMediumName        
           font.pixelSize: fonts.smallFontSize // set in state
           anchors.top: parent.top
           anchors.bottom: parent.bottom
@@ -241,5 +243,7 @@ Item {
     visible:      (!trackIsLoaded && deckSizeState != "small")
     source:       emptyTrackDeckImage
   }
+
+  Prefs { id: prefs }
 
 }

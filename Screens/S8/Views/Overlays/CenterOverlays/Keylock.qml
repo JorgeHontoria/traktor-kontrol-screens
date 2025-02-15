@@ -65,7 +65,7 @@ CenterOverlay {
     anchors.horizontalCenter: parent.horizontalCenter
     anchors.topMargin:        55
     font.pixelSize:           fonts.moreLargeValueFontSize
-    font.family   :           "Pragmatica"
+    font.family   :           "Consolas"
     color:                    keylock.keyColor
     opacity:                  (keyDisplay.value == "") ? 0 : 1
     text:                     prefs.camelotKey ? utils.convertToCamelot(keyDisplay.value) : keyDisplay.value
@@ -78,7 +78,7 @@ CenterOverlay {
     anchors.topMargin:        67
     anchors.rightMargin:      20
     font.pixelSize:           fonts.largeFontSize
-    font.family   :           "Pragmatica"
+    font.family   :           "Consolas"
     font.capitalization: Font.AllUppercase
     color:                    colors.colorGrey104
     text:  ((key<0)?"":"+") + key.toFixed(2).toString()

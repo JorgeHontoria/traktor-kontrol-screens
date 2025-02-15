@@ -1,10 +1,19 @@
 import CSI 1.0
 import QtQuick
+import QtQml
 import Traktor.Gui 1.0 as Traktor
 
 import './../' as Templates
 import './../../Views/Browser' as BrowserView
 import './../../Views/Widgets' as Widgets
+
+ 
+
+//----------------------------------------------------------------------------------------------------------------------
+// TODO: Config LOADER
+//----------------------------------------------------------------------------------------------------------------------
+import '../../../../CSI/Common/Settings'
+import '../../../../Screens/Defines'
 
 //----------------------------------------------------------------------------------------------------------------------
 //                                            BROWSER VIEW
@@ -42,6 +51,34 @@ Templates.View {
   AppProperty { id: deckCKeyDisplay; path: "app.traktor.decks.3.track.key.resulting.quantized" }
   AppProperty { id: deckDKeyDisplay; path: "app.traktor.decks.4.track.key.resulting.quantized" }
   AppProperty { id: masterDeckId; path: "app.traktor.masterclock.source_id" }
+
+  //--------------------------------------------------------------------------------------------------------------------
+  // TODO: Config LOADER
+  // TODO: Debug MANAGER
+  //--------------------------------------------------------------------------------------------------------------------
+  
+  /*
+  ConfigLoader {
+    id: configManager
+  }
+
+  Rectangle {
+    anchors.bottom: parent.bottom
+    anchors.left: parent.left
+    anchors.right: parent.right
+    height: 86
+    opacity: 1
+    color: "red"
+    z: 1
+    Text {
+      anchors.fill: parent
+      text: prefs.debugResult
+      font.pixelSize: fonts.miniFontSize
+      font.family: prefs.fontName
+    }
+    visible: prefs.debug
+  }
+  */
 
   //--------------------------------------------------------------------------------------------------------------------
 
@@ -255,5 +292,7 @@ Templates.View {
 
     return "";
   }
+
+  Prefs { id: prefs }
 }
 

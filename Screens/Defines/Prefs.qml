@@ -3,15 +3,15 @@ import QtQuick
 QtObject {
 
   // controller preferences
-  readonly property bool mixerFXSelector:         false
-  readonly property bool prioritizeFXSelection:   false
+  property bool mixerFXSelector:                  false
+  property bool prioritizeFXSelection:            false
 
   readonly property bool fineMasterTempoAdjust:   true
   readonly property bool fineDeckTempoAdjust:     true
 
   // global preferences
-  readonly property bool camelotKey:                       true
-  readonly property int  phraseLength:                     4
+  property bool camelotKey:                       true
+  readonly property int  phraseLength:            4
 
   // browser preferences
   readonly property bool displayMatchGuides:      true
@@ -22,7 +22,7 @@ QtObject {
   readonly property bool displayHotCueBar:        true
   readonly property bool displayDeckIndicators:   true
   readonly property bool displayPhaseMeter:       true
-  readonly property int spectrumWaveformColors:   1 // Change for Spectrum Waveform Colors Themes
+  property int spectrumWaveformColors:            1 // Change for Spectrum Waveform Colors Themes
                                                     // 1 - KOKERNUTZ, 
                                                     // 2 - NEXUS
                                                     // 3 - PRIME
@@ -59,4 +59,52 @@ QtObject {
   // 27: "off",           28: "bpmTrack"     29: "remixBeats"
   // 30: "remixQuantize", 31: "keyDisplay"
 
+  // Fonts
+  // property string fontName: "Pragmatica"
+  // property string fontMediumName: "Pragmatica MediumTT"
+  property string fontName: "Consolas"
+  property string fontMediumName: "TRAKTORFREON"
+
+  property string fontForNumber: "Consolas"
+  property string fontForString: "TRAKTORFREON"
+
+  //font.family: "Pragmatica"
+  //font.family: "Pragmatica MediumTT"
+  //font.family: "TRAKTORFREON" // Ok
+  //font.family: "UpheavalX1" // Ok
+
+  //font.family: "ProggyCleanTT" // Require install
+  //font.family: "ProggyVector" // Require install
+
+  //font.family: "Webdings"
+
+  //font.family: "Consolas" // Ok
+  //font.family: "Consolas Bold"
+
+  //font.family: "Roboto"
+  //font.family: "Roboto Light"
+  //font.family: "Roboto Medium"
+  //font.family: "Roboto Regular"
+
+  //--------------------------------------------------------------------------------------------------------------------
+  // TODO: Config LOADER
+  property bool debug: false
+  property string debugResult: ""
+
+  function log(message) {
+    var count = (debugResult.match(/<br>/g) || []).length;
+
+    if (count > 4) {
+      // break the textblock into an array of lines
+      var lines = debugResult.split('<br>');
+      // remove one line, starting at the first position
+      lines.splice(0,1);
+      // join the array back into a single string
+      debugResult = lines.join('<br>');
+    }
+
+    debugResult +=  "<br>" + message;
+  }
+
+  //--------------------------------------------------------------------------------------------------------------------
 }
